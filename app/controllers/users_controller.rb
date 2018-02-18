@@ -4,6 +4,14 @@ class UsersController<ApplicationController
    erb :index
   end
 
+  get '/login' do
+    if logged_in?
+      redirect to '/show'
+    else
+      erb :'users/login'
+    end
+  end
+
   get '/signup' do
   if logged_in?
     redirect to '/show'
@@ -32,13 +40,13 @@ post '/signup' do
   end
 
  post '/login' do
-   puts params
-   @user=User.find_by(:username => params[:username])
-   if @user != nil && @user.password == params[:password]
-       session[:user_id] = @user.id
-       redirect to '/account'
-     end
-     erb :error
+   user = User.find_by(:username => params[:username])
+    if user && user.authenticate(params[:password])
+       session[:user_id] = user.id
+       redirect "/show"
+   else
+       redirect "/signup"
+   end
  end
 
  get '/logout' do
