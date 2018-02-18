@@ -1,9 +1,11 @@
+source 'http://rubygems.org'
+
 gem 'sinatra'
 gem 'activerecord', '4.2.5'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'thin'
-gem 'require-all'
+gem 'require_all'
 gem 'bcrypt'
 
 
@@ -14,5 +16,4 @@ group :development do
   gem 'sqlite3'
   gem 'capybara'
   gem 'database_cleaner', git:'https://github.com/bmabey/database_cleaner.git'
-  gem 'pry'
 end
