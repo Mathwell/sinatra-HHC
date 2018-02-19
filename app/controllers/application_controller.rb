@@ -7,7 +7,9 @@ class ApplicationController<Sinatra::Base
  end
 
  helpers do
-		def logged_in?
+
+    def logged_in?
+      #binding.pry
 			!!session[:user_id]
 		end
 
