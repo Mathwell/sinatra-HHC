@@ -5,7 +5,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string :last_name
       t.string :ssn
       t.string :insurance
-      t.integer :user_id
+      t.integer :nurse_id
     end
   end
 end

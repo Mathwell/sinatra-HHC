@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180218212511) do
     t.string  "last_name"
     t.string  "ssn"
     t.string  "insurance"
-    t.integer "user_id"
+    t.integer "nurse_id"
   end
 
   create_table "users", force: :cascade do |t|
