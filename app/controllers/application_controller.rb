@@ -1,9 +1,11 @@
 require_relative '../../config/environment'
+require 'rack-flash'
+
 class ApplicationController<Sinatra::Base
   configure do
-   set :views, Proc.new { File.join(root, "../views/") }
-   enable :sessions unless test?
-   set :session_secret, "secret"
+     set :views, Proc.new { File.join(root, "../views/") }
+     enable :sessions
+    set :session_secret, "secret"
  end
 
  helpers do

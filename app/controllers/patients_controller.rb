@@ -1,4 +1,17 @@
+require 'rack-flash'
+
 class PatientsController<ApplicationController
+ use Rack::Flash
+
+ get '/patients' do
+   @nurse=Nurse.find_by(id: current_user.id)
+   if @nurse
+     erb :'nurses/show'
+   else
+     erb :'nurses/new'
+   end
+ end
+
  get '/add' do
    erb :'patients/new'
  end
@@ -30,6 +43,7 @@ class PatientsController<ApplicationController
     if @nurse.patients.include?(@patient)
       @nurse.patients.delete(@patient)
       @patient.delete
+      flash[:message]="Successfully deleted patient #{@patient.name}"
     end
     erb :'nurses/show'
  end
@@ -42,6 +56,7 @@ class PatientsController<ApplicationController
       @patient.ssn=params[:ssn]
       @patient.insurance=params[:insurance]
       @patient.save
+      flash[:message]="Successfully updated patient #{@patient.name}"
       erb :'/patients/show'
     else
       erb :'nurses/show'

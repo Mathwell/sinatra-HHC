@@ -1,3 +1,7 @@
+<%if flash.has?(:message)%>
+<%=flash[:message]%>
+<%end%>
+
 <h1> <%=@patient.name%> </h1>
 SSN:       <%=@patient.ssn%> <br>
 Insurance: <%=@patient.insurance%>  <br>

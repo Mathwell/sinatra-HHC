@@ -1,3 +1,7 @@
+<%if flash.has?(:message)%>
+<%=flash[:message]%>
+<%end%>
+
 <h1> <%=@nurse.name%> patients</h1>
 <TABLE  BORDER="1">
    <TR>

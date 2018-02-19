@@ -1,4 +1,6 @@
+require 'rack-flash'
 class UsersController<ApplicationController
+  use Rack::Flash
 
   get '/' do
    erb :index
@@ -45,7 +47,8 @@ post '/signup' do
        session[:user_id] = user.id
        redirect "/show"
    else
-       redirect "/signup"
+       flash[:message]="User's credentials do not match our records. Try again or create a new account."
+       redirect "/"
    end
  end
 

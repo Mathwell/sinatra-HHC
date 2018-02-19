@@ -1,4 +1,6 @@
+require 'rack-flash'
 class NursesController<ApplicationController
+  use Rack::Flash
  get '/new' do
    erb :'nurses/new'
  end
