@@ -1,9 +1,38 @@
 <h1> <%=@nurse.name%> patients</h1>
-<ul>
+<TABLE  BORDER="1">
+   <TR>
+      <TH COLSPAN="5">
+         <H3><BR><%=@nurse.name%> patients</H3>
+      </TH>
+   </TR>
+
+  <tr>
+    <th>Patient</th>
+    <th>SSN</th>
+    <th>Insurance</th>
+    <th> </th>
+  </tr>
+
 <% @nurse.patients.each do |patient| %>
-  <li> <a href="/patients/<%= patient.slug %>">Name: <%= patient.name %></a> </li>
+  <tr align="left">
+    <td> <%=patient.name%>   </td>
+    <td> <%=patient.ssn%>   </td>
+    <td> <%=patient.insurance%>   </td>
+    <td> <a href="/patients/<%= patient.slug %>">View</a>
+      <a href="/patients/<%= patient.slug %>/edit">Edit</a>
+      <a href="/patients/<%= patient.slug %>/delete">Delete</a>
+    </td>
+  </tr>
   <%end%>
-</ul>
+
+  <TR>
+     <TH COLSPAN="5">
+        <H3><BR><a href="/add">Add Patient</a> </H3>
+     </TH>
+  </TR>
+</table>
+
+<br>
 
 <a href="/add">Add Patient</a> <br>
 <a href="/logout">Edit Information   </a> <br>

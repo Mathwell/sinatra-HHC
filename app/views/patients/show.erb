@@ -1,2 +1,5 @@
 <h1> <%=@patient.name%> </h1>
+SSN:       <%=@patient.ssn%> <br>
+Insurance: <%=@patient.insurance%>  <br>
+<a href="/patients/<%= @patient.slug %>/edit">Edit </a><br>
 <a href="/patients">See All Patients </a><br>
