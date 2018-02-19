@@ -3,7 +3,12 @@
 <%end%>
 
 <h1> <%=@patient.name%> </h1>
-SSN:       <%=@patient.ssn%> <br>
-Insurance: <%=@patient.insurance%>  <br>
+DOB: <%=@patient.dob%><br><br>
+SSN:       <%=@patient.ssn%> <br><br>
+Insurance: <%=@patient.insurance%>  <br><br>
+Status:  <%=@patient.status%><br><br>
+Schedule: <%=@patient.schedule%><br><br>
+
+
 <a href="/patients/<%= @patient.slug %>/edit">Edit </a><br>
 <a href="/patients">See All Patients </a><br>

@@ -5,23 +5,29 @@
 <h1> <%=@nurse.name%> patients</h1>
 <TABLE  BORDER="1">
    <TR>
-      <TH COLSPAN="5">
+      <TH COLSPAN="7">
          <H3><BR><%=@nurse.name%> patients</H3>
       </TH>
    </TR>
 
   <tr>
     <th>Patient</th>
+    <th>DOB</th>
     <th>SSN</th>
     <th>Insurance</th>
+    <th>Status</th>
+    <th>Schedule</th>
     <th> </th>
   </tr>
 
 <% @nurse.patients.each do |patient| %>
   <tr align="left">
     <td> <%=patient.name%>   </td>
+    <td> <%=patient.dob%>   </td>
     <td> <%=patient.ssn%>   </td>
     <td> <%=patient.insurance%>   </td>
+    <td> <%=patient.status%>   </td>
+    <td> <%=patient.schedule%>   </td>
     <td> <a href="/patients/<%= patient.slug %>">View</a>
       <a href="/patients/<%= patient.slug %>/edit">Edit</a>
       <a href="/patients/<%= patient.slug %>/delete">Delete</a>
@@ -30,7 +36,7 @@
   <%end%>
 
   <TR>
-     <TH COLSPAN="5">
+     <TH COLSPAN="7">
         <H3><BR><a href="/add">Add Patient</a> </H3>
      </TH>
   </TR>

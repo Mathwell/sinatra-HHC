@@ -1,8 +1,12 @@
 <h1>Complete Registration:</h1>
 <form class="" action="/add" method="post">
-  First Name: <input type="text" name="first_name" value=""> <br>
-  Last Name: <input type="text" name="last_name" value=""><br>
-  Date of Birth: <input type="text" name="dob" value=""><br>
-
+  First Name: <input type="text" name="patient[first_name]" value=""> <br><br>
+  Last Name: <input type="text" name="patient[last_name]" value=""><br><br>
+  Date of Birth: <input type="text" name="patient[dob]" value=""><br><br>
+  SSN: <input type="text" name="patient[ssn]" value=""><br><br>
+  Insurance: <input type="text" name="patient[insurance]" value=""><br><br>
+  Status: <input type="text" name="patient[status]" value=""><br><br>
+  Schedule: <input type="text" name="patient[schedule]" value=""><br>
+<br><br>
   <input type="submit" name="submit" value="submit"> <br>
 </form>

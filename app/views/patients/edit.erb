@@ -1,10 +1,15 @@
 <h1>Edit <%=@patient.name%></h1>
 
 <form class="" action="/patients/<%=@patient.slug%>" method="post">
-  First Name: <input type="text" name="first_name" value="<%=@patient.first_name%>"> <br>
-  Last Name: <input type="text" name="last_name" value="<%=@patient.last_name%>"><br>
-  SSN: <input type="text" name="ssn" value="<%=@patient.ssn%>">
-  Insurance: <input type="text" name="insurance" value="<%=@patient.insurance%>">
+  First Name: <input type="text" name="patient[first_name]" value="<%=@patient.first_name%>"> <br>
+  Last Name: <input type="text" name="patient[last_name]" value="<%=@patient.last_name%>"><br><br>
+  Date of Birth <input type="text" name="patient[dob]" value="<%=@patient.dob%>"><br><br>
+  SSN: <input type="text" name="patient[ssn]" value="<%=@patient.ssn%>"><br><br>
+  Insurance: <input type="text" name="patient[insurance]" value="<%=@patient.insurance%>"><br><br>
+  Status: <input type="text" name="patient[status]" value="<%=@patient.status%>"><br><br>
+  Schedule: <input type="text" name="patient[schedule]" value="<%=@patient.schedule%>"><br>
+
+  <br><br>
   <input type="submit" name="submit" value="Submit Changes"> <br>
 </form>
 
