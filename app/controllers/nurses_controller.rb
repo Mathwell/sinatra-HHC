@@ -6,7 +6,7 @@ class NursesController<ApplicationController
  get '/patients' do
    @nurse=Nurse.find_by(id: current_user.id)
    if @nurse
-     erb :'nurser/show'
+     erb :'nurses/show'
    else
      erb :'nurses/new'
    end

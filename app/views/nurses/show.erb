@@ -1,7 +1,10 @@
 <h1> <%=@nurse.name%> patients</h1>
 <ul>
 <% @nurse.patients.each do |patient| %>
-  <li> <%= patient.name %></li>
+  <li> <a href="/patients/<%= patient.slug %>">Name: <%= patient.name %></a> </li>
   <%end%>
 </ul>
-<a href="/add">Add Patient</a>
+
+<a href="/add">Add Patient</a> <br>
+<a href="/logout">Edit Information   </a> <br>
+<a href="/logout">Log Out    </a> <br>
