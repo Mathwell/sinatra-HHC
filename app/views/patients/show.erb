@@ -3,12 +3,31 @@
 <%end%>
 
 <h1> <%=@patient.name%> </h1>
-DOB: <%=@patient.dob%><br><br>
-SSN:       <%=@patient.ssn%> <br><br>
-Insurance: <%=@patient.insurance%>  <br><br>
-Status:  <%=@patient.status%><br><br>
-Schedule: <%=@patient.schedule%><br><br>
+<table>
+  <tr>
+    <td>DOB:</td> <td><%=@patient.dob%></td>
+  </tr>
+  <tr>
+    <td>SSN:</td><td><%=@patient.ssn%> </td>
+  </tr>
+  <tr>
+    <td>Insurance:</td><td><%=@patient.insurance%></td>
+  </tr>
+  <tr>
+    <td>Status:</td><td>  <%=@patient.status%></td>
+  </tr>
+  <tr>
+    <td>Schedule:</td><td><%=@patient.schedule%></td>
+  </tr>
+</table>
+<br><br>
 
-
-<a href="/patients/<%= @patient.slug %>/edit">Edit </a><br>
-<a href="/patients">See All Patients </a><br>
+<table>
+  <tr>
+    <td><a href="/patients/<%= @patient.slug %>/edit">Edit </a></td>
+    <td></td>
+    <td><a href="/patients">See All Patients </a></td>
+    <td></td>
+    <td><a href="/patients/<%= @patient.slug %>/delete">Delete </a></td>
+  </tr>
+</table>

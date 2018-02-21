@@ -3,7 +3,7 @@
 <%end%>
 
 <h1> <%=@nurse.name%> patients</h1>
-<TABLE  BORDER="1">
+<TABLE border='5'>
    <TR>
       <TH COLSPAN="7">
          <H3><BR><%=@nurse.name%> patients</H3>
@@ -43,7 +43,12 @@
 </table>
 
 <br>
-
-<a href="/add">Add Patient</a> <br>
-<a href="/logout">Edit Information   </a> <br>
-<a href="/logout">Log Out    </a> <br>
+<table>
+  <tr>
+    <td><a href="/add">Add Patient</a></td>
+    <td></td>
+    <td><a href="/logout">Edit Information   </a></td>
+    <td></td>
+    <td><a href="/logout">Log Out    </a></td>
+  </tr>
+</table>
