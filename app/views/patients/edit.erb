@@ -1,16 +1,31 @@
 <h1>Edit <%=@patient.name%></h1>
+<table>
 
 <form class="" action="/patients/<%=@patient.slug%>" method="post">
-  First Name: <input type="text" name="patient[first_name]" value="<%=@patient.first_name%>"> <br>
-  Last Name: <input type="text" name="patient[last_name]" value="<%=@patient.last_name%>"><br><br>
-  Date of Birth <input type="text" name="patient[dob]" value="<%=@patient.dob%>"><br><br>
-  SSN: <input type="text" name="patient[ssn]" value="<%=@patient.ssn%>"><br><br>
-  Insurance: <input type="text" name="patient[insurance]" value="<%=@patient.insurance%>"><br><br>
-  Status: <input type="text" name="patient[status]" value="<%=@patient.status%>"><br><br>
-  Schedule: <input type="text" name="patient[schedule]" value="<%=@patient.schedule%>"><br>
+  <tr>
+  <td>First Name:</td> <td> <input type="text" name="patient[first_name]" value="<%=@patient.first_name%>"></td>
+  </tr>
+<tr>
+  <td>Last Name:</td> <td> <input type="text" name="patient[last_name]" value="<%=@patient.last_name%>"></td>
+</tr>
+  <tr>
+  <td>Date of Birth:</td> <td> <input type="text" name="patient[dob]" value="<%=@patient.dob%>"></td>
+  </tr>
 
-  <br><br>
-  <input type="submit" name="submit" value="Submit Changes"> <br>
+  <tr>
+  <td>SSN:</td> <td><input type="text" name="patient[ssn]" value="<%=@patient.ssn%>"></td>
+  </tr>
+ <tr>
+  <td>Insurance:</td> <td><input type="text" name="patient[insurance]" value="<%=@patient.insurance%>"></td>
+ </tr>
+
+  <tr>
+  <td>Status:</td><td> <input type="text" name="patient[status]" value="<%=@patient.status%>"></td>
+  </tr>
+  <tr>
+  <td>Schedule:</td> <td><input type="text" name="patient[schedule]" value="<%=@patient.schedule%>"></td>
+  </tr>
+</table>
+<br><br>
+  <input type="submit" name="submit" value="Submit changes"> <br>
 </form>
-
-<a href="/patients">See All Patients </a><br>
