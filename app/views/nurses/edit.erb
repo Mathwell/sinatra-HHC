@@ -1,0 +1,16 @@
+<h1>Edit <%=@nurse.name%></h1>
+<form class="" action="/nurses/<%=@nurse.slug%>" method="post">
+  <table>
+  <tr>
+    <td>First Name: </td> <td><input type="text" name="nurse[first_name]" value="<%=@nurse.first_name%>"></td>
+  </tr>
+  <tr>
+    <td>Last Name: </td> <td><input type="text" name="nurse[last_name]" value="<%=@nurse.last_name%>"></td>
+  </tr>
+  <tr>
+    <td>Position: </td> <td>Nurse</td>
+  </tr>
+
+</table>
+  <input type="submit" name="submit" value="submit"> <br>
+</form>

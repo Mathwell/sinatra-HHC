@@ -3,14 +3,7 @@ require 'rack-flash'
 class PatientsController<ApplicationController
  use Rack::Flash
 
- get '/patients' do
-   @nurse=Nurse.find_by(id: current_user.id)
-   if @nurse
-     erb :'nurses/show'
-   else
-     erb :'nurses/new'
-   end
- end
+
 
  get '/add' do
    erb :'patients/new'
