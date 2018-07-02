@@ -27,8 +27,14 @@ class PatientsController<ApplicationController
  end
 
  get '/patients/:slug/edit' do
+    @nurse=Nurse.find_by(id: current_user.id)
     @patient=Patient.find_by_slug(params[:slug])
-    erb :'patients/edit'
+    if @nurse.patients.include?(@patient)
+        erb :'patients/edit'
+      else
+        flash[:message]="Patient #{@patient.name} is not in #{@nurse.name}'s schedule"
+        erb :'nurses/show'
+      end
  end
 
  get '/patients/:slug/delete' do
@@ -38,6 +44,8 @@ class PatientsController<ApplicationController
       @nurse.patients.delete(@patient)
       @patient.delete
       flash[:message]="Successfully deleted patient #{@patient.name}"
+    else
+      flash[:message]="Patient #{@patient.name} is not in #{@nurse.name}'s schedule"
     end
     erb :'nurses/show'
  end
