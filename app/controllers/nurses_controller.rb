@@ -45,15 +45,30 @@ class NursesController<ApplicationController
    #binding.pry
    @nurse=Nurse.find_by_slug(params[:slug])
    if @nurse
-     @nurse.update(params[:nurse])
+     if validate_name(params[:nurse]["first_name"]) && validate_name(params[:nurse]["last_name"])
+       @nurse.update(params[:nurse])
+     #binding.pry
      #@patient.save
-     flash[:message]="Successfully updated nurse #{@nurse.name}"
-     erb :'/nurses/show'
+      flash[:message]="Successfully updated nurse #{@nurse.name}"
+      erb :'/nurses/show'
+    else
+      flash[:message]="Last name and first name should be one word each."
+      erb :'/nurses/edit'
+    end
 
    else
      erb :'error'
    end
+ end
 
+
+ def validate_name(name)
+   #binding.pry
+   if name.split(" ").map.size==1
+     return true
+   else
+     return false
+   end
  end
 
 end
