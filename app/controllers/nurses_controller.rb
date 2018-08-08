@@ -21,8 +21,24 @@ class NursesController<ApplicationController
  end
 
  get '/nurses/:slug/edit'do
+  @user=Nurse.find_by(id: current_user.id)
   @nurse=Nurse.find_by_slug(params[:slug])
-  erb :'nurses/edit'
+  #binding.pry
+  if @nurse
+    if @user.id!=@nurse.id
+      message="You are not authorized to edit #{@nurse.name}."
+      @nurse=@user
+    else
+      message=""
+    end
+   else
+     message="Link does not exist."
+     @nurse=@user
+    end
+    flash[:message]=message
+    erb :'nurses/edit'
+    #flash[:message]=message
+
  end
 
  post '/nurses/:slug' do

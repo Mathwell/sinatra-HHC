@@ -1,3 +1,7 @@
+<%if flash.has?(:message)%>
+<%=flash[:message]%>
+<%end%>
+
 <h1>Edit <%=@nurse.name%></h1>
 <form class="" action="/nurses/<%=@nurse.slug%>" method="post">
   <table>

@@ -15,7 +15,7 @@ class Nurse<ActiveRecord::Base
     if patient
       return patient
     else
-      return "Not found"
+      return false
     end
   end
 end
