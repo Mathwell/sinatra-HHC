@@ -30,8 +30,7 @@ Functionality
 3.	Patients’ data. Patients can be added, viewed, modified and deleted.  Patient’s information is only accessible to the nurse that is assigned to the patient.
 
 Install instruction?
-
-To use this app, just clone this repo.
+To use this app, just clone this repo: https://github.com/Mathwell/sinatra-HHC.
 And then execute:$ bundle install
 
 Step 1) Run: rake db:migrate
@@ -39,8 +38,7 @@ Step 2) Run: rake db:seed
 Step 3) Run: shotgun
 
 Contributors Guide?
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/NickisKnowledge/BPTracker_Sinatra_Project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Mathwell/sinatra-HHC. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 Link to the license for code?
 The app is available as open source under the terms of the MIT License.
