@@ -30,7 +30,7 @@ Functionality
 3.	Patients’ data. Patients can be added, viewed, modified and deleted.  Patient’s information is only accessible to the nurse that is assigned to the patient.
 
 Install instruction?
-To use this app, just clone this repo: https://github.com/Mathwell/sinatra-HHC.
+To use this app, just clone this [repo](https://github.com/Mathwell/sinatra-HHC)
 And then execute:$ bundle install
 
 Step 1) Run: rake db:migrate
