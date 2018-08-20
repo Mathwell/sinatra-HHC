@@ -4,6 +4,7 @@
 
 <h1>Edit <%=@nurse.name%></h1>
 <form class="" action="/nurses/<%=@nurse.slug%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <table>
   <tr>
     <td>First Name: </td> <td><input type="text" name="nurse[first_name]" value="<%=@nurse.first_name%>"></td>

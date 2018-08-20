@@ -2,6 +2,7 @@
 <table>
 
 <form class="" action="/patients/<%=@patient.slug%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <tr>
   <td>First Name:</td> <td> <input type="text" name="patient[first_name]" value="<%=@patient.first_name%>"></td>
   </tr>

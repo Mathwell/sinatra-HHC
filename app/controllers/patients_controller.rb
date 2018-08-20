@@ -69,4 +69,17 @@ class PatientsController<ApplicationController
     end
  end
 
+ patch '/patients/:slug' do
+    @patient=Patient.find_by_slug(params[:slug])
+    if @patient
+      @patient.update(params[:patient])
+      #@patient.save
+      flash[:message]="Successfully updated patient #{@patient.name}"
+      erb :'/patients/show'
+
+    else
+      erb :'error'
+    end
+ end
+
 end

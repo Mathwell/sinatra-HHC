@@ -41,7 +41,7 @@ class NursesController<ApplicationController
 
  end
 
- post '/nurses/:slug' do
+ patch '/nurses/:slug' do
    #binding.pry
    @nurse=Nurse.find_by_slug(params[:slug])
    if @nurse
