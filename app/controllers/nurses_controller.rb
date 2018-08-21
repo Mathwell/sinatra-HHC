@@ -1,6 +1,8 @@
 require 'rack-flash'
 class NursesController<ApplicationController
   use Rack::Flash
+
+
  get '/new' do
    erb :'nurses/new'
  end
@@ -16,16 +18,16 @@ class NursesController<ApplicationController
  end
 
  post '/new' do
-   @nurse=Nurse.find_or_create_by(first_name: params[:first_name], last_name: params[:last_name])
+   @nurse=Nurse.find_or_create_by(first_name: params[:first_name], last_name: params[:last_name], user_id: current_user.id)
    erb:'nurses/show'
  end
 
  get '/nurses/:slug/edit'do
-  @user=Nurse.find_by(id: current_user.id)
+  @user=User.find_by(id: current_user.id)
   @nurse=Nurse.find_by_slug(params[:slug])
-  #binding.pry
+  binding.pry
   if @nurse
-    if @user.id!=@nurse.id
+    if @user.id!=@nurse.user_id
       message="You are not authorized to edit #{@nurse.name}."
       @nurse=@user
     else
