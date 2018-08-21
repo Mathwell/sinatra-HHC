@@ -25,8 +25,9 @@ class PatientsController<ApplicationController
    @nurse=Nurse.find_by(id: current_user.id)
    @patient=Patient.find_by_slug(params[:slug])
    if @nurse.patients.include?(@patient)
-       erb :'patients/edit'
+       erb :'patients/show'
      else
+       #binding.pry
        flash[:message]="Patient #{@patient.name} is not in #{@nurse.name}'s schedule"
        erb :'nurses/show'
      end

@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>HHC Scheduler</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+    background-color: #93B874;
+}
+h1 {
+    background-color: orange;
+}
+p {
+    background-color: rgb(255,255,0);
+}
+</style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Welcome to Sinatra HHC Scheduler</h1>
+      <img src="http://www.scottishhousingnews.com/wp-content/uploads/sites/21/2016/08/home-care-stock-1.png" width="770" height="455">
+
+      <%= yield %>
+
+      <%if flash.has?(:message)%>
+      <%=flash[:message]%>
+      <%end%>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

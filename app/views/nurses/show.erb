@@ -1,7 +1,3 @@
-<%if flash.has?(:message)%>
-<%=flash[:message]%>
-<%end%>
-
 <h1> <%=@nurse.name%> patients</h1>
 <TABLE border='5'>
    <TR>
@@ -37,7 +33,7 @@
 
   <TR>
      <TH COLSPAN="7">
-        <H3><BR><a href="/add">Add Patient</a> </H3>
+        <H3><BR><a href="/add">Add Patient   </a> </H3>
      </TH>
   </TR>
 </table>
@@ -45,7 +41,7 @@
 <br>
 <table>
   <tr>
-    <td><a href="/add">Add Patient</a></td>
+    <td><a href="/add">Add Patient   </a></td>
     <td></td>
     <td><a href="/nurses/<%=@nurse.slug%>/edit">Edit Information   </a></td>
     <td></td>
