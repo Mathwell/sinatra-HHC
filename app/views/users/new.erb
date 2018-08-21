@@ -5,3 +5,7 @@
   E-mail   :<input type="text" name="email" value=""><br><br>
   <input type="submit" value="Create account">
 </form>
+
+<%if flash.has?(:message)%>
+<%=flash[:message]%>
+<%end%>

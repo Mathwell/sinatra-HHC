@@ -33,9 +33,13 @@ post '/signup' do
       redirect to '/signup'
     else
       @user=User.new(:username => params[:username], :email => params[:email], :password => params[:password])
-      @user.save
-      session[:user_id]=@user.id
-      redirect to '/show'
+      if @user.save
+        session[:user_id]=@user.id
+        redirect to '/show'
+      else
+        flash[:message]=@user.errors.full_messages.join(" ")
+        redirect to '/signup'
+      end
     end
 
 
