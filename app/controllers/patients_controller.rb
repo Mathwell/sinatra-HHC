@@ -12,7 +12,7 @@ class PatientsController<ApplicationController
  post '/add' do
    #@patient=Patient.find_or_create_by(first_name: params[:first_name], last_name: params[:last_name])
    @patient=Patient.find_or_create_by(params[:patient])
-   @nurse=Nurse.find_by(id: current_user.id)
+   @nurse=Nurse.find_by(user_id: current_user.id)
    if @nurse
      @nurse.patients<<@patient
      erb :'nurses/show'
@@ -22,19 +22,18 @@ class PatientsController<ApplicationController
  end
 
  get '/patients/:slug' do
-   @nurse=Nurse.find_by(id: current_user.id)
+   @nurse=Nurse.find_by(user_id: current_user.id)
    @patient=Patient.find_by_slug(params[:slug])
    if @nurse.patients.include?(@patient)
        erb :'patients/show'
      else
-       #binding.pry
        flash[:message]="Patient #{@patient.name} is not in #{@nurse.name}'s schedule"
        erb :'nurses/show'
      end
  end
 
  get '/patients/:slug/edit' do
-    @nurse=Nurse.find_by(id: current_user.id)
+    @nurse=Nurse.find_by(user_id: current_user.id)
     @patient=Patient.find_by_slug(params[:slug])
     if @nurse.patients.include?(@patient)
         erb :'patients/edit'
@@ -58,19 +57,6 @@ class PatientsController<ApplicationController
  end
 
  post '/patients/:slug' do
-    @patient=Patient.find_by_slug(params[:slug])
-    if @patient
-      @patient.update(params[:patient])
-      #@patient.save
-      flash[:message]="Successfully updated patient #{@patient.name}"
-      erb :'/patients/show'
-
-    else
-      erb :'error'
-    end
- end
-
- patch '/patients/:slug' do
     @patient=Patient.find_by_slug(params[:slug])
     if @patient
       @patient.update(params[:patient])
